@@ -1,6 +1,6 @@
 <div style="padding: 25px;">
 <div style="display: flex; justify-content:space-between;  flex-wrap: wrap;">
-  <mat-card>
+  <mat-card (click)="navigate(1)">
     <mat-card-header>
       <mat-card-title>Home Component</mat-card-title>
       <mat-card-subtitle>Edit Home Page</mat-card-subtitle>
@@ -27,14 +27,19 @@
 </div>
 <br>
 <br>
-<div style="display: flex; justify-content:space-between">
-  <mat-card style="flex:1; max-width: 630px; text-align: center;">
+<hr>
+<div style="display: flex; justify-content:space-between; flex-wrap: wrap;">
+  <mat-card style="  text-align: center; min-width: 300px;">
     <h1>Total Users</h1>
     <h1>{{ userNum }}</h1>
 </mat-card>
-<mat-card style="flex:1; max-width: 630px; text-align: center;">
+<mat-card style="  text-align: center; min-width: 300px;">
     <h1>Total Blogs</h1>
     <h1>{{ blogNum }}</h1>
+</mat-card>
+<mat-card style="  text-align: center; min-width: 300px;">
+  <h1>Total Products</h1>
+  <h1>{{ productNum }}</h1>
 </mat-card>
 </div>
 

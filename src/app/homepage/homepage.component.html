@@ -1,0 +1,118 @@
+<div class="mat-app-background dark-theme" >
+
+<mat-toolbar color="primary">
+<a [routerLink]="'/'" style="text-decoration: none; color: white;">
+  <span>STOPNC HOMEPAGE</span>
+</a>
+  <span class="example-spacer"></span>
+
+  <button mat-raised-button color="accent" (click)="saveData()">
+    Save
+  </button>
+</mat-toolbar>
+<div style="width:100%;">
+  <mat-spinner *ngIf="isLoading" style="margin: auto"></mat-spinner>
+</div>
+<div *ngIf="!isLoading" style="padding: 20px;">
+  <mat-card>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>1st Blog Home</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="blog1 === undefined">
+        <p>
+        No Blog Selected
+      </p>
+      </div>
+      <div *ngIf="blog1 !== undefined">
+      Id: <span>{{ blog1._id }}</span> <br>
+      Title: <span>{{ blog1.title }}</span> <br>
+      Author: <span>{{ blog1.authorId.name }}</span> <br>
+      Date: <span>{{ blog1.date | date: 'dd/MM/yyyy'}}</span> <br>
+      <br>
+      {{blog1.body}}
+        <br>
+        <br>
+        <div style="display: flex; flex-wrap: wrap;">
+          <div *ngFor="let item of blog1.image">
+            <img [src]="item" style="max-width: 100px">
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button  mat-stroked-button color="accent" (click)="openDialog(1)">Select Blog</button>
+    </mat-card-actions>
+  </mat-card>
+  <br>
+  <br>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>2nd Blog Home</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="blog1 === undefined">
+        <p>
+        No Blog Selected
+      </p>
+      </div>
+      <div *ngIf="blog2 !== undefined">
+      Id: <span>{{ blog2._id }}</span> <br>
+      Title: <span>{{ blog2.title }}</span> <br>
+      Author: <span>{{ blog2.authorId.name }}</span> <br>
+      Date: <span>{{ blog2.date | date: 'dd/MM/yyyy'}}</span> <br>
+      <br>
+      {{blog2.body}}
+        <br>
+        <br>
+        <div style="display: flex; flex-wrap: wrap;">
+          <div *ngFor="let item of blog1.image">
+            <img [src]="item" style="max-width: 100px">
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button  mat-stroked-button color="accent" (click)="openDialog(2)">Select Blog</button>
+    </mat-card-actions>
+  </mat-card>
+  <br>
+  <br>
+  <h1>Top Stories</h1>
+  <br>
+  <button  mat-stroked-button color="accent" (click)="openDialog(3)">Add Blog</button>
+  <br>
+  <br>
+  <mat-card *ngFor="let blog of blog3" style="margin-bottom: 10px;">
+    <mat-card-header>
+      <mat-card-title>Top Story blog</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="blog3.length === 0">
+        <p>
+        No Blog Selected
+      </p>
+      </div>
+      <div *ngIf="blog3.length !== 0">
+      Id: <span>{{ blog._id }}</span> <br>
+      Title: <span>{{ blog.title }}</span> <br>
+      Author: <span>{{ blog.authorId.name }}</span> <br>
+      Date: <span>{{ blog.date | date: 'dd/MM/yyyy'}}</span> <br>
+      <br>
+      {{blog.body}}
+        <br>
+        <br>
+        <div style="display: flex; flex-wrap: wrap;">
+          <div *ngFor="let item of blog.image">
+            <img [src]="item" style="max-width: 100px">
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>
+</div>
+</div>

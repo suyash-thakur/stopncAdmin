@@ -7,11 +7,24 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './home/home.component';
+import { BlogList } from './homepage/homepage.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { HomepageComponent } from './homepage/homepage.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
+import { FilterPipe } from './blogfilter.pipe';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    HomepageComponent,
+    BlogList,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -19,7 +32,14 @@ import {MatGridListModule} from '@angular/material/grid-list';
     BrowserAnimationsModule,
     MatCardModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatListModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
+    MatToolbarModule
 
   ],
   providers: [],

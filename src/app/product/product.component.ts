@@ -57,10 +57,13 @@ onImageUpload() {
       this.product.push(val.product);
     });
   }
-  deleteProduct(id:any) {
+  deleteProduct(id:any, blog:any) {
     this.http.post('http://localhost:3000/api/admin/deleteProduct' + id, {}).subscribe((val: any) => {
       console.log(val);
-      this.product.pop();
+      const index: number = this.product.indexOf(blog);
+      if (index !== -1) {
+        this.product.splice(index, 1);
+      }
     });
   }
 }

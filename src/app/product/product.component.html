@@ -1,0 +1,67 @@
+<mat-card>
+</mat-card>
+<mat-card>
+  <mat-card-content>
+    <form class="example-form">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Product Name</mat-label>
+        <input matInput [(ngModel)]="newBlog.name" name="name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Link</mat-label>
+        <input matInput [(ngModel)]="newBlog.link" name="link">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="newBlog.description" name="description"></textarea>
+      </mat-form-field>
+      <input type="file" #filePicker (change)="onSelectFile($event)" style="display:none">
+
+      </form>
+      <div style="display: flex; flex-wrap: wrap;">
+        <div *ngFor="let item of imagesUrl">
+          <img [src]="item" style="max-width: 100px">
+        </div>
+      </div>
+      <div class="example-button-container">
+        <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)="filePicker.click()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" (click)="saveProduct()">Save</button>
+  </mat-card-actions>
+</mat-card>
+<div *ngFor="let item of product">
+  <br>
+<mat-card >
+  <mat-card-content>
+    <form class="example-form">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Product Name</mat-label>
+        <input matInput [(ngModel)]="item.name" name="name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Link</mat-label>
+        <input matInput [(ngModel)]="item.link" name="link">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="item.description" name="description"></textarea>
+      </mat-form-field>
+
+      </form>
+      <div style="display: flex; flex-wrap: wrap;">
+        <div *ngFor="let image of item.image">
+          <img [src]="image" style="max-width: 100px">
+        </div>
+      </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="danger" (click)="deleteProduct(item._id)">Delete</button>
+  </mat-card-actions>
+</mat-card>
+</div>

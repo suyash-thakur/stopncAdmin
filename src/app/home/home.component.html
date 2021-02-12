@@ -37,10 +37,12 @@
     <h1>Total Blogs</h1>
     <h1>{{ blogNum }}</h1>
 </mat-card>
+<a [routerLink]="['/product']" routerLinkActive="router-link-active" style="text-decoration: none;">
 <mat-card style="  text-align: center; min-width: 300px;">
   <h1>Total Products</h1>
   <h1>{{ productNum }}</h1>
 </mat-card>
+</a>
 </div>
 
 </div>

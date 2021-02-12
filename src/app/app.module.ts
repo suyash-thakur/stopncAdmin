@@ -18,13 +18,16 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { ProductComponent } from './product/product.component';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HomepageComponent,
     BlogList,
-    FilterPipe
+    FilterPipe,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatInputModule,
     FormsModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule
 
   ],
   providers: [],

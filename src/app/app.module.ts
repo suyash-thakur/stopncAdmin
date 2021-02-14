@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './home/home.component';
 import { BlogList } from './homepage/homepage.component';
+import { ProductList } from './explore/explore.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HomepageComponent } from './homepage/homepage.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -20,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ProductComponent } from './product/product.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ExploreComponent } from './explore/explore.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,9 @@ import { MatIconModule } from '@angular/material/icon';
     HomepageComponent,
     BlogList,
     FilterPipe,
-    ProductComponent
+    ProductComponent,
+    ExploreComponent,
+    ProductList
   ],
   imports: [
     BrowserModule,

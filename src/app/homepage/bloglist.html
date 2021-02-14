@@ -7,6 +7,11 @@
   </form>
   <mat-list-option *ngFor="let blog of data.blog | blogFilter: filterData"   (click)="onBlogSelect(blog)">
     {{blog.title}}
+    <div style="display: flex; flex-wrap: wrap;">
+      <div *ngFor="let item of blog.image">
+        <img [src]="item" style="max-width: 100px">
+      </div>
+    </div>
   </mat-list-option>
 </mat-selection-list>
 <button mat-button color="accent" [mat-dialog-close]="selectblog">Save</button>

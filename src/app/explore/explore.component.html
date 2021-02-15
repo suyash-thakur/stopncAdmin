@@ -6,7 +6,7 @@
     <span>STOPNC EXPLORE</span>
   </a>
     <span class="example-spacer" style="flex-grow: 1;"></span>
-    <button mat-raised-button color="accent" >
+    <button mat-raised-button color="accent"  (click)="saveExploreData()">
       Save
     </button>
     </mat-toolbar-row>
@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-      <div *ngIf="trendingProduct[1] === undefined || trendingProduct.length === 0">
+      <div *ngIf="trendingProduct[0] === undefined || trendingProduct.length === 0">
         No Blog Selected
       </div>
       </mat-card-content>
@@ -197,7 +197,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="trendingBlog[1] === undefined || trendingBlog.length === 0">
+    <div *ngIf="trendingBlog[0] === undefined || trendingBlog.length === 0">
       No Blog Selected
     </div>
     </mat-card-content>
@@ -255,27 +255,24 @@
       <button  mat-stroked-button color="accent" (click)="openDialog(3, 1)">Select Product</button>
     </mat-card-actions>
   </mat-card>
-
-</div>
-<div style="display: flex; justify-content:space-between; padding: 15px">
   <mat-card>
     <mat-card-header>
       <mat-card-title>Blog 4</mat-card-title>
 
     </mat-card-header>
     <mat-card-content>
-      <div *ngIf="trendingBlog[4] !== undefined">
+      <div *ngIf="trendingBlog[3] !== undefined">
       <div >
-        <p>{{ trendingBlog[4].title  }}</p>
+        <p>{{ trendingBlog[3].title  }}</p>
       </div>
       <br>
       <div style="display: flex; justify-content:space-between;">
-        <div *ngFor="let item of trendingBlog[4].image">
+        <div *ngFor="let item of trendingBlog[3].image">
           <img [src]="item" style="max-width: 70px;">
         </div>
       </div>
     </div>
-    <div *ngIf="trendingBlog[4] === undefined || trendingBlog.length === 0">
+    <div *ngIf="trendingBlog[3] === undefined || trendingBlog.length === 0">
       No Blog Selected
     </div>
     </mat-card-content>
@@ -283,136 +280,8 @@
       <button  mat-stroked-button color="accent" (click)="openDialog(4, 1)">Select Product</button>
     </mat-card-actions>
   </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Blog 5</mat-card-title>
-
-    </mat-card-header>
-    <mat-card-content>
-      <div *ngIf="trendingBlog[4] !== undefined">
-      <div>
-        <p>{{ trendingBlog[4].title  }}</p>
-      </div>
-      <br>
-      <div style="display: flex; justify-content:space-between;">
-        <div *ngFor="let item of trendingBlog[4].image">
-          <img [src]="item" style="max-width: 70px;">
-        </div>
-      </div>
-      </div>
-      <div *ngIf="trendingBlog[4] === undefined || trendingBlog.length === 0">
-        No Blog Selected
-      </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button  mat-stroked-button color="accent" (click)="openDialog(5, 1)">Select Product</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Blog 6</mat-card-title>
-
-    </mat-card-header>
-    <mat-card-content>
-      <div *ngIf="trendingBlog[5] !== undefined">
-      <div>
-        <p>{{ trendingBlog[5].title  }}</p>
-      </div>
-      <br>
-      <div style="display: flex; justify-content:space-between;">
-        <div *ngFor="let item of trendingBlog[5].image">
-          <img [src]="item" style="max-width: 70px;">
-        </div>
-      </div>
-    </div>
-    <div *ngIf="trendingBlog[5] === undefined || trendingBlog.length === 0">
-      No Blog Selected
-    </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button  mat-stroked-button color="accent" (click)="openDialog(6, 1)">Select Product</button>
-    </mat-card-actions>
-  </mat-card>
-
 </div>
-<div style="display: flex; justify-content:space-between; padding: 15px">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Blog 7</mat-card-title>
 
-    </mat-card-header>
-    <mat-card-content>
-      <div *ngIf="trendingBlog[6] !== undefined">
-      <div >
-        <p>{{ trendingBlog[6].title  }}</p>
-      </div>
-      <br>
-      <div style="display: flex; justify-content:space-between;">
-        <div *ngFor="let item of trendingBlog[6].image">
-          <img [src]="item" style="max-width: 70px;">
-        </div>
-      </div>
-    </div>
-    <div *ngIf="trendingBlog[6] === undefined || trendingBlog.length === 0">
-      No Blog Selected
-    </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button  mat-stroked-button color="accent" (click)="openDialog(7, 1)">Select Product</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Blog 7</mat-card-title>
-
-    </mat-card-header>
-    <mat-card-content>
-      <div *ngIf="trendingBlog[7] !== undefined">
-      <div>
-        <p>{{ trendingBlog[7].title  }}</p>
-      </div>
-      <br>
-      <div style="display: flex; justify-content:space-between;">
-        <div *ngFor="let item of trendingBlog[7].image">
-          <img [src]="item" style="max-width: 70px;">
-        </div>
-      </div>
-      </div>
-      <div *ngIf="trendingBlog[7] === undefined || trendingBlog.length === 0">
-        No Blog Selected
-      </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button  mat-stroked-button color="accent" (click)="openDialog(8, 1)">Select Product</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Blog 9</mat-card-title>
-
-    </mat-card-header>
-    <mat-card-content>
-      <div *ngIf="trendingBlog[8] !== undefined">
-      <div>
-        <p>{{ trendingBlog[8].title  }}</p>
-      </div>
-      <br>
-      <div style="display: flex; justify-content:space-between;">
-        <div *ngFor="let item of trendingBlog[6].image">
-          <img [src]="item" style="max-width: 70px;">
-        </div>
-      </div>
-    </div>
-    <div *ngIf="trendingBlog[8] === undefined || trendingBlog.length === 0">
-      No Blog Selected
-    </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button  mat-stroked-button color="accent" (click)="openDialog(9, 1)">Select Product</button>
-    </mat-card-actions>
-  </mat-card>
-
-</div>
 <h1 style="padding: 15px">
   Exclusive Blogs
   <br>
@@ -435,7 +304,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="ExclusiveBlog[1] === undefined || ExclusiveBlog.length === 0">
+    <div *ngIf="ExclusiveBlog[0] === undefined || ExclusiveBlog.length === 0">
       No Blog Selected
     </div>
     </mat-card-content>
@@ -493,27 +362,24 @@
       <button  mat-stroked-button color="accent" (click)="openDialog(3, 2)">Select Product</button>
     </mat-card-actions>
   </mat-card>
-
-</div>
-<div style="display: flex; justify-content:space-between; padding: 15px">
   <mat-card>
     <mat-card-header>
       <mat-card-title>Blog 4</mat-card-title>
 
     </mat-card-header>
     <mat-card-content>
-      <div *ngIf="ExclusiveBlog[4] !== undefined">
+      <div *ngIf="ExclusiveBlog[3] !== undefined">
       <div >
-        <p>{{ ExclusiveBlog[4].title  }}</p>
+        <p>{{ ExclusiveBlog[3].title  }}</p>
       </div>
       <br>
       <div style="display: flex; justify-content:space-between;">
-        <div *ngFor="let item of ExclusiveBlog[4].image">
+        <div *ngFor="let item of ExclusiveBlog[3].image">
           <img [src]="item" style="max-width: 70px;">
         </div>
       </div>
     </div>
-    <div *ngIf="ExclusiveBlog[4] === undefined || ExclusiveBlog.length === 0">
+    <div *ngIf="ExclusiveBlog[3] === undefined || ExclusiveBlog.length === 0">
       No Blog Selected
     </div>
     </mat-card-content>
@@ -521,57 +387,6 @@
       <button  mat-stroked-button color="accent" (click)="openDialog(4, 2)">Select Product</button>
     </mat-card-actions>
   </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Blog 5</mat-card-title>
-
-    </mat-card-header>
-    <mat-card-content>
-      <div *ngIf="ExclusiveBlog[4] !== undefined">
-      <div>
-        <p>{{ ExclusiveBlog[4].title  }}</p>
-      </div>
-      <br>
-      <div style="display: flex; justify-content:space-between;">
-        <div *ngFor="let item of ExclusiveBlog[4].image">
-          <img [src]="item" style="max-width: 70px;">
-        </div>
-      </div>
-      </div>
-      <div *ngIf="ExclusiveBlog[4] === undefined || ExclusiveBlog.length === 0">
-        No Blog Selected
-      </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button  mat-stroked-button color="accent" (click)="openDialog(5, 2)">Select Product</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Blog 6</mat-card-title>
-
-    </mat-card-header>
-    <mat-card-content>
-      <div *ngIf="ExclusiveBlog[5] !== undefined">
-      <div>
-        <p>{{ ExclusiveBlog[5].title  }}</p>
-      </div>
-      <br>
-      <div style="display: flex; justify-content:space-between;">
-        <div *ngFor="let item of ExclusiveBlog[5].image">
-          <img [src]="item" style="max-width: 70px;">
-        </div>
-      </div>
-    </div>
-    <div *ngIf="ExclusiveBlog[5] === undefined || ExclusiveBlog.length === 0">
-      No Blog Selected
-    </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button  mat-stroked-button color="accent" (click)="openDialog(6, 2)">Select Product</button>
-    </mat-card-actions>
-  </mat-card>
-
 </div>
 </div>
 </div>

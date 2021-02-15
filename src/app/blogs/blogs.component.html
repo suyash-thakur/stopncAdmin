@@ -1,0 +1,41 @@
+<div class="mat-app-background dark-theme" >
+
+<div *ngIf="isloaded">
+  <br>
+  <div *ngFor="let item of blogs; let i = index;">
+  <mat-card class="example-card" >
+    <mat-card-header>
+      <mat-card-title>{{item.title}}</mat-card-title>
+      <mat-card-subtitle>{{item.authorId.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+       {{ item.body }}
+      </p>
+      <div style="display: flex; justify-content:space-between;">
+        <div *ngFor="let img of item.image">
+          <img [src]="img" style="max-width: 70px;">
+        </div>
+      </div>
+      <h2>Products</h2>
+      <div style="display: flex; justify-content:flex-start;">
+        <div  *ngFor="let product of blogProducts[i]">
+          <div>
+            <img [src]="product.image[0]" style="width: 75px;">
+          </div>
+          <div>
+            <a [href]="product.link">{{ product.name }}</a>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button  mat-stroked-button color="accent" (click)="openDialog(i)">Select Product</button>
+
+      <button mat-button (click)="verifyBlog(item._id, i)">Verify</button>
+    </mat-card-actions>
+  </mat-card>
+  <br>
+</div>
+</div>
+</div>

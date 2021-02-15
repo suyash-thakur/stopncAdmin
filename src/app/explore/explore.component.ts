@@ -32,17 +32,17 @@ export class ExploreComponent implements OnInit {
 
     });
     this.http.get('http://localhost:3000/api/admin/explore').subscribe((res: any) => {
-      this.explore = res;
-      if (this.explore.products !== undefined) {
+      this.explore = res.explore;
+      if (this.explore.product !== undefined) {
         this.trendingProduct = this.explore.product;
       }
       if (this.explore.trending !== undefined) {
         this.trendingBlog = this.explore.trending;
       }
-      if (this.explore.exclusive) {
+      if (this.explore.exclusive !== undefined) {
         this.ExclusiveBlog = this.explore.exclusive;
       }
-      console.log(this.trendingProduct);
+      console.log(res);
       this.isLoaded = true;
 
 
@@ -111,7 +111,29 @@ export class ExploreComponent implements OnInit {
       });
     }
   }
-
+  saveExploreData() {
+    let products: Array<any> = [];
+    for (let i = 0; i < this.trendingProduct.length; i++) {
+      products.push(this.trendingProduct[i]._id);
+    }
+    let trending: Array<any> = [];
+    for (let i = 0; i < this.trendingBlog.length; i++) {
+      trending.push(this.trendingBlog[i]._id);
+    }
+    let exclusive: Array<any> = [];
+    for (let i = 0; i < this.ExclusiveBlog.length; i++) {
+      exclusive.push(this.ExclusiveBlog[i]._id);
+    }
+    const data = {
+      product: products,
+      trending: trending,
+      exclusive: exclusive
+    }
+    console.log(data);
+    this.http.post('http://localhost:3000/api/admin/createExplore', data).subscribe(res => {
+      console.log(res);
+    });
+  }
 }
 @Component({
   selector: 'product-list',

@@ -1,0 +1,19 @@
+<mat-selection-list #selectedblog [multiple]="false">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Search ..." [(ngModel)]="filterData" name="search">
+    </mat-form-field>
+  </form>
+  <mat-list-option *ngFor="let blog of data.blog | blogFilter: filterData"   (click)="onBlogSelect(blog)">
+   <div style="display: flex;">
+    <div>
+      {{blog.name}}
+    </div>
+    <div>
+      <img [src]="blog.image[0]" style="width: 50px; margin-left: 15px">
+    </div>
+   </div>
+  </mat-list-option>
+</mat-selection-list>
+<button mat-button color="accent" [mat-dialog-close]="selectProduct">Save</button>

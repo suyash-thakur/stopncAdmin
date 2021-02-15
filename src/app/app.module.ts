@@ -22,6 +22,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { ProductComponent } from './product/product.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ExploreComponent } from './explore/explore.component';
+import { BlogsComponent } from './blogs/blogs.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { SelectProduct } from './blogs/blogs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,9 @@ import { ExploreComponent } from './explore/explore.component';
     FilterPipe,
     ProductComponent,
     ExploreComponent,
-    ProductList
+    ProductList,
+    BlogsComponent,
+    SelectProduct
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,8 @@ import { ExploreComponent } from './explore/explore.component';
     FormsModule,
     MatButtonModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule
 
   ],
   providers: [],

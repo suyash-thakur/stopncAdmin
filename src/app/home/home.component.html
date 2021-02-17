@@ -33,10 +33,12 @@
 <br>
 <hr>
 <div style="display: flex; justify-content:space-between; flex-wrap: wrap;">
+  <a [routerLink]="['/user']" routerLinkActive="router-link-active" style="text-decoration: none;">
   <mat-card style="  text-align: center; min-width: 300px;">
     <h1>Total Users</h1>
     <h1>{{ userNum }}</h1>
 </mat-card>
+</a>
 <mat-card style="  text-align: center; min-width: 300px;">
     <h1>Total Blogs</h1>
     <h1>{{ blogNum }}</h1>

@@ -1,0 +1,34 @@
+<div class="mat-app-background dark-theme" >
+  <mat-toolbar color="primary">
+    <a [routerLink]="'/'" style="text-decoration: none; color: white;">
+      <span>STOPNC USERS</span>
+    </a>
+      <span class="example-spacer"></span>
+    </mat-toolbar>
+<div *ngIf="isLoading === false">
+  <br>
+  <br>
+<div *ngFor="let item of users">
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+         {{ item.name }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ item.discription }}
+        </mat-panel-description>
+        <mat-card-actions>
+          <button mat-raised-button color="accent" (click)="onVerify(item._id)">Verify</button>
+        </mat-card-actions>
+      </mat-expansion-panel-header>
+      <p>{{ item.about }}</p>
+      <br>
+      Followers: {{ item.follower.length }}
+      &nbsp; &nbsp;
+      Following: {{item.following.length }}
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+</div>
+</div>

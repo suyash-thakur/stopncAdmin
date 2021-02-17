@@ -25,6 +25,7 @@ import { ExploreComponent } from './explore/explore.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SelectProduct } from './blogs/blogs.component';
+import { UserComponent } from './user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { SelectProduct } from './blogs/blogs.component';
     ExploreComponent,
     ProductList,
     BlogsComponent,
-    SelectProduct
+    SelectProduct,
+    UserComponent
   ],
   imports: [
     BrowserModule,

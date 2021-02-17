@@ -1,5 +1,10 @@
 <div class="mat-app-background dark-theme" >
-
+  <mat-toolbar color="primary">
+    <a [routerLink]="'/'" style="text-decoration: none; color: white;">
+      <span>STOPNC BLOG</span>
+    </a>
+      <span class="example-spacer"></span>
+    </mat-toolbar>
 <div *ngIf="isloaded">
   <br>
   <div *ngFor="let item of blogs; let i = index;">

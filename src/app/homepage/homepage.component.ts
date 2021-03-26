@@ -23,7 +23,7 @@ export class HomepageComponent implements OnInit {
     this.http.get('http://localhost:3000/api/admin/homepageInfo').subscribe((res:any) => {
       console.log(res);
       this.homedata = res.home;
-      if (this.homedata != undefined) {
+      if (this.homedata !== undefined && this.homedata.FirstBlog !== undefined  && this.homedata.SecondBlog !== undefined && this.homedata.TopStories.length !== 0) {
         this.blog1 = this.homedata.FirstBlog;
         this.blog2 = this.homedata.SecondBlog;
         this.blog3 = this.homedata.TopStories;
@@ -65,6 +65,7 @@ export class HomepageComponent implements OnInit {
 
       }else if (this.selectIndex === 3) {
         this.blog3.push(result);
+        console.log(this.blog3);
 
       }
     });

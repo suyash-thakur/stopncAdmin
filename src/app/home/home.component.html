@@ -16,8 +16,8 @@
 </a>
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Category Component</mat-card-title>
-      <mat-card-subtitle>Edit Category Page</mat-card-subtitle>
+      <mat-card-title>Feed Component</mat-card-title>
+      <mat-card-subtitle>Edit Feed Page</mat-card-subtitle>
     </mat-card-header>
   </mat-card>
   <a [routerLink]="['/blog']" routerLinkActive="router-link-active" style="text-decoration: none;">
@@ -50,5 +50,9 @@
 </mat-card>
 </a>
 </div>
-
+<div>
+  <mat-card (click)="clearCache()">
+    Clear Cache
+  </mat-card>
+</div>
 </div>

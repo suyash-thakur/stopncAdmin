@@ -17,10 +17,10 @@ export class BlogsComponent implements OnInit {
   blogProducts: Array<Array<any>> = [];
 
   isloaded = false;
+  prodLoaded = false;
   ngOnInit(): void {
     this.http.get('http://localhost:3000/api/admin/unverifiedBlog').subscribe((res: any) => {
       this.blogs = res;
-      this.isloaded = true;
       console.log("blog", this.blogs);
       for (let i = 0; i < this.blogs.length; i++) {
         if (this.blogs[i].products !== undefined) {
@@ -30,10 +30,12 @@ export class BlogsComponent implements OnInit {
         }
       }
       console.log(this.blogProducts);
+      this.isloaded = true;
+
     });
     this.http.get('http://localhost:3000/api/admin/productInfo').subscribe((res: any) => {
       this.products = res.blog;
-
+      this.prodLoaded = true;
       console.log(this.products);
 
     });

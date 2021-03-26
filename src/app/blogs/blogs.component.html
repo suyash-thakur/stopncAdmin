@@ -23,7 +23,7 @@
         </div>
       </div>
       <h2>Products</h2>
-      <div style="display: flex; justify-content:flex-start;">
+      <div style="display: flex; justify-content:flex-start;" *ngIf="isloaded === true">
         <div  *ngFor="let product of blogProducts[i]">
           <div>
             <img [src]="product.image[0]" style="width: 75px;">
